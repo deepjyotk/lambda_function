@@ -15,6 +15,9 @@ public class ApplicationConfig {
     @Value("${dynamodb.table-name}")
     private String dynamoTableName;
 
+    @Value("${s3.bucket-name}")
+    private String s3BucketName;
+
     public String getAppName() {
         return appName;
     }
@@ -25,5 +28,9 @@ public class ApplicationConfig {
 
     public String getDynamoTableName() {
         return dynamoTableName;
+    }
+
+    public String getS3BucketName() {
+        return s3BucketName;
     }
 }

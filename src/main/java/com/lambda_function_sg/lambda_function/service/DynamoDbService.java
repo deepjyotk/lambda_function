@@ -1,7 +1,6 @@
 package com.lambda_function_sg.lambda_function.service;
 
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
@@ -11,10 +10,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@RequiredArgsConstructor
 public class DynamoDbService {
 
     private final DynamoDbClient dynamoDbClient;
+
+
+    public DynamoDbService(DynamoDbClient dynamoDbClient) {
+        this.dynamoDbClient = dynamoDbClient;
+    }
+
 
     public void saveItem(String tableName, String id, String name) {
         Map<String, AttributeValue> item = new HashMap<>();
