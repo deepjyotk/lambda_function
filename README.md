@@ -1,1 +1,1 @@
-# lambda_function
+# lambda_function + S3 + DynamoDB
